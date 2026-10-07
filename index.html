@@ -183,7 +183,7 @@ details[open] summary::after{transform:rotate(45deg)}
 details p{color:var(--mute);padding:0 0 22px;max-width:66ch}
 
 /* FORM */
-.quote{display:grid;grid-template-columns:1.25fr .9fr;gap:clamp(24px,4vw,56px);align-items:start}
+.quote{display:grid;grid-template-columns:1fr;max-width:760px;gap:clamp(24px,4vw,56px);align-items:start}
 @media(max-width:900px){.quote{grid-template-columns:1fr}}
 form{display:grid;gap:26px;min-width:0}
 .f{display:grid;gap:10px;border:0;padding:0;margin:0;min-width:0}
@@ -448,13 +448,8 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px;color:var(--mute
       </div>
       <input type="date" id="fecha" aria-label="Fecha de instalación" hidden style="max-width:240px;margin-top:10px"></fieldset>
       <div class="f"><label for="comentario">Comentario (opcional)</label><textarea id="comentario" placeholder="Por ejemplo: son 3 salas de reunión en un segundo piso."></textarea></div>
-      <div><a class="btn" id="wa" href="https://wa.me/5493515331676" target="_blank" rel="noopener">Enviar por WhatsApp</a></div>
+      <div style="display:grid;gap:14px;justify-items:start"><a class="btn" id="wa" href="https://wa.me/5493515331676" target="_blank" rel="noopener">Enviar por WhatsApp</a><small style="color:var(--mute);font-size:.82rem">Esta página no guarda tus datos. El mensaje sale desde tu WhatsApp al <span class="sel">+54 9 351 533-1676</span>.</small></div>
     </form>
-    <aside class="preview" aria-live="polite">
-      <span class="eyebrow">Así llega tu mensaje</span>
-      <div class="bubble" id="bubble"></div>
-      <small>Esta página no guarda tus datos. El mensaje sale desde tu WhatsApp al <span class="sel">+54 9 351 533-1676</span>.</small>
-    </aside>
   </div>
 </div></section>
 </main>
@@ -562,7 +557,7 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px;color:var(--mute
       '• Instalación: '+inst];
     var c=$('comentario').value.trim(); if(c)L.push('• Comentario: '+c);
     L.push('','Enviado desde la web de Shift');
-    var t=L.join('\n'); $('bubble').textContent=t;
+    var t=L.join('\n');
     wa.href='https://wa.me/5493515331676?text='+encodeURIComponent(t);
   }
   form.addEventListener('input',function(){if(nombre.value.trim()){err.hidden=true;nombre.classList.remove('bad')}build()});
