@@ -124,6 +124,7 @@ header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backgroun
 .how-text{display:grid;gap:22px}
 .pair{display:grid;gap:6px;padding-left:16px;border-left:1px solid var(--line2)}
 .pair p{color:var(--mute)}
+.only-m{display:none}
 .linkbtn{background:none;border:0;color:var(--glow);font:500 .9rem var(--body);padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:4px;justify-self:start}
 
 /* GRIDS */
@@ -256,6 +257,8 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px;color:var(--mute
   .num{font-size:1.7rem}.num small{font-size:.66rem;margin-left:4px}
   .layer{padding:10px 12px;font-size:.82rem}.layer span{font-size:.6rem}
   .cell{height:110px}
+  .only-m{display:inline-flex;margin-top:14px;width:100%;justify-content:center}
+  .how-text .linkbtn{display:none}
   .big2{font-size:4.2rem}
   .list li{font-size:.88rem}
   summary{font-size:.94rem;padding-block:16px}
@@ -323,6 +326,7 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px;color:var(--mute
       </div>
       <div class="cell" id="cell" aria-hidden="true"></div>
       <div class="cell-cap"><span>Cristales dentro del film</span><b data-crystal-label>Alineados: la luz pasa</b></div>
+      <button class="btn ghost only-m" type="button" data-toggle>Cambiar el estado y mirar los cristales</button>
     </div>
     <div class="how-text rv">
       <div class="pair"><h3>Encendido: transparente</h3><p>Con corriente, los cristales se alinean y la luz pasa derecho. El vidrio se ve casi como uno común.</p></div>
