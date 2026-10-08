@@ -154,7 +154,7 @@ header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backgroun
 .tag{font:500 .62rem/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--mute);border:1px solid var(--line2);padding:5px 8px;border-radius:999px;justify-self:start}
 .tag.ok{color:var(--warm);border-color:var(--warm)}
 .ico{width:34px;height:34px;stroke:var(--glow);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;margin-bottom:6px}
-.vis{aspect-ratio:3/2;border-radius:8px;border:1px solid var(--line2);overflow:hidden;margin-bottom:10px;background:radial-gradient(120% 90% at 50% 0,#102murky,#07101f)}
+.vis{aspect-ratio:3/2;border-radius:8px;border:1px solid var(--line2);overflow:hidden;margin-bottom:10px;background:radial-gradient(120% 90% at 50% 0,#0a1222y,#07101f)}
 .vis{background:radial-gradient(120% 95% at 50% 0,#12264a,#070d19)}
 .vis svg{display:block;width:100%;height:100%}
 .cellx:hover .vis{border-color:var(--line2)}
@@ -325,6 +325,19 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px;color:var(--mute
   <linearGradient id="gKey" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#46505e"/><stop offset=".6" stop-color="#171d26"/><stop offset="1" stop-color="#0c1016"/></linearGradient>
   <linearGradient id="gSiri" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8cc0ff"/><stop offset=".5" stop-color="#b98cff"/><stop offset="1" stop-color="#ffb45c"/></linearGradient>
   <radialGradient id="gHalo"><stop offset="0" stop-color="#8cc0ff" stop-opacity=".55"/><stop offset="1" stop-color="#8cc0ff" stop-opacity="0"/></radialGradient>
+  <linearGradient id="gWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#20304a"/><stop offset=".55" stop-color="#16233a"/><stop offset="1" stop-color="#0d1728"/></linearGradient>
+  <linearGradient id="gPlate" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2c3038"/><stop offset=".5" stop-color="#15181d"/><stop offset="1" stop-color="#0a0c10"/></linearGradient>
+  <linearGradient id="gRocker" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3f48"/><stop offset=".45" stop-color="#20242b"/><stop offset=".46" stop-color="#15181e"/><stop offset="1" stop-color="#0d1015"/></linearGradient>
+  <linearGradient id="gBody" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8e97a5"/><stop offset=".08" stop-color="#e6edf7"/><stop offset=".5" stop-color="#5d6676"/><stop offset=".93" stop-color="#e6edf7"/><stop offset="1" stop-color="#7d8794"/></linearGradient>
+  <linearGradient id="gScreen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#101a2e"/><stop offset="1" stop-color="#05080f"/></linearGradient>
+  <linearGradient id="gNight" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0d1a36"/><stop offset=".55" stop-color="#0b1526"/><stop offset="1" stop-color="#060a14"/></linearGradient>
+  <linearGradient id="gNight2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a1222"/><stop offset="1" stop-color="#05080f"/></linearGradient>
+  <radialGradient id="gMoon"><stop offset="0" stop-color="#fff8ec"/><stop offset=".72" stop-color="#e8dcc6"/><stop offset="1" stop-color="#c9bda6"/></radialGradient>
+  <radialGradient id="gMoonGlow"><stop offset="0" stop-color="#ffe9c4" stop-opacity=".55"/><stop offset="1" stop-color="#ffe9c4" stop-opacity="0"/></radialGradient>
+  <radialGradient id="gSiriOrb"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".35" stop-color="#8cc0ff"/><stop offset=".7" stop-color="#b98cff"/><stop offset="1" stop-color="#ff9a5c"/></radialGradient>
+  <filter id="fBlur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter>
+  <filter id="fSoft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3.5"/></filter>
+  <filter id="fDrop" x="-40%" y="-30%" width="180%" height="180%"><feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#000" flood-opacity=".65"/></filter>
 </defs></svg>
 <main id="site">
 <div class="hero" id="inicio">
@@ -386,12 +399,19 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px;color:var(--mute
   <div class="head rv"><span class="eyebrow">Cómo se controla</span><h2>Un botón, desde donde te quede cómodo</h2>
   <p class="lead">Cada instalación incluye la tecla de pared. El control remoto y las opciones conectadas son opcionales y se definen en la cotización.</p></div>
   <div class="grid g4 rv">
-    <div class="cellx"><div class="vis"><svg viewBox="0 0 300 200" role="img" aria-label="Tecla de pared minimalista">
-  <ellipse cx="150" cy="105" rx="110" ry="70" fill="url(#gHalo)"/>
-  <rect x="112" y="48" width="76" height="112" rx="12" fill="url(#gMetal)" stroke="rgba(255,255,255,.22)"/>
-  <rect x="124" y="60" width="52" height="88" rx="8" fill="#0d1219" stroke="rgba(255,255,255,.14)"/>
-  <path class="vline" d="M150 124V84M134 98l16-16 16 16"/>
-  <circle cx="150" cy="140" r="2.5" fill="var(--glow)"/>
+    <div class="cellx"><div class="vis"><svg viewBox="0 0 300 200" role="img" aria-label="Tecla de pared negra sobre la pared">
+  <rect width="300" height="200" fill="url(#gWall)"/>
+  <ellipse cx="150" cy="86" rx="130" ry="86" fill="#5d7fb5" opacity=".16" filter="url(#fBlur)"/>
+  <ellipse cx="150" cy="178" rx="120" ry="26" fill="#000" opacity=".3" filter="url(#fBlur)"/>
+  <g filter="url(#fDrop)">
+    <rect x="113" y="46" width="74" height="108" rx="9" fill="url(#gPlate)"/>
+    <rect x="113.6" y="46.6" width="72.8" height="106.8" rx="8.4" fill="none" stroke="#fff" stroke-opacity=".16"/>
+    <rect x="125" y="60" width="50" height="80" rx="5" fill="url(#gRocker)"/>
+    <path d="M125 100h50" stroke="#000" stroke-opacity=".55"/>
+    <path d="M127 62h46" stroke="#fff" stroke-opacity=".14" stroke-width="1.4"/>
+    <circle cx="150" cy="130" r="2.4" fill="#8cc0ff" opacity=".85"/>
+    <circle cx="150" cy="130" r="6" fill="#8cc0ff" opacity=".3" filter="url(#fSoft)"/>
+  </g>
 </svg></div><span class="tag ok">Incluido</span><h3>Tecla de pared</h3><p>Como una llave de luz. Queda fija al lado de la puerta, lista para cualquiera que entre.</p></div>
     <div class="cellx"><div class="vis"><svg viewBox="0 0 300 200" role="img" aria-label="Control remoto Shift">
   <ellipse cx="150" cy="100" rx="105" ry="68" fill="url(#gHalo)"/>
@@ -404,29 +424,42 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px;color:var(--mute
     <text class="vtxt" x="150" y="170" text-anchor="middle">SHIFT</text>
   </g>
 </svg></div><span class="tag">Opcional</span><h3>Control remoto</h3><p>Un botón para pasar de transparente a privado desde cualquier lugar del ambiente.</p></div>
-    <div class="cellx"><div class="vis"><svg viewBox="0 0 300 200" role="img" aria-label="Control desde el celular y por voz">
-  <ellipse cx="150" cy="105" rx="110" ry="70" fill="url(#gHalo)"/>
-  <rect x="106" y="18" width="88" height="170" rx="18" fill="url(#gMetal)" stroke="rgba(255,255,255,.22)"/>
-  <rect x="114" y="26" width="72" height="154" rx="13" fill="#060a12"/>
-  <rect x="136" y="30" width="28" height="7" rx="3.5" fill="#11161f"/>
-  <circle cx="150" cy="92" r="26" fill="url(#gSiri)" opacity=".92"/>
-  <circle cx="150" cy="92" r="33" fill="none" stroke="url(#gSiri)" stroke-opacity=".4"/>
-  <g class="vline" stroke-width="3" opacity=".9"><path d="M126 140v8M137 134v20M148 128v32M159 136v16M170 142v4"/></g>
+    <div class="cellx"><div class="vis"><svg viewBox="0 0 300 200" role="img" aria-label="Celular con asistente de voz activo">
+  <rect width="300" height="200" fill="#070d18"/>
+  <ellipse cx="150" cy="110" rx="120" ry="80" fill="#6f8fd6" opacity=".2" filter="url(#fBlur)"/>
+  <g filter="url(#fDrop)">
+    <rect x="103" y="16" width="94" height="182" rx="20" fill="url(#gBody)"/>
+    <rect x="107" y="20" width="86" height="174" rx="17" fill="url(#gScreen)"/>
+    <rect x="135" y="26" width="30" height="9" rx="4.5" fill="#05070c"/>
+    <circle cx="150" cy="104" r="40" fill="url(#gSiriOrb)" opacity=".28" filter="url(#fBlur)"/>
+    <circle cx="150" cy="104" r="25" fill="url(#gSiriOrb)"/>
+    <ellipse cx="142" cy="95" rx="9" ry="6" fill="#fff" opacity=".45" filter="url(#fSoft)"/>
+    <g stroke="#cfe2ff" stroke-width="2.6" stroke-linecap="round" opacity=".9">
+      <path d="M124 154v6M134 148v18M144 142v30M154 146v22M164 150v14M174 155v4"/>
+    </g>
+    <rect x="133" y="186" width="34" height="3" rx="1.5" fill="#fff" opacity=".35"/>
+  </g>
 </svg></div><span class="tag">Opcional</span><h3>Celular y voz</h3><p>Con un controlador wifi se maneja desde una app y con asistentes de voz. Consultanos la disponibilidad.</p></div>
-    <div class="cellx"><div class="vis"><svg viewBox="0 0 300 200" role="img" aria-label="Programación por horarios: transparente de día, privado de noche">
-  <ellipse cx="150" cy="100" rx="108" ry="68" fill="url(#gHalo)"/>
-  <circle cx="150" cy="100" r="62" class="vdim"/>
-  <path class="vcool" d="M150 38a62 62 0 0 1 0 124" stroke-width="6"/>
-  <path class="vwarm" d="M150 162a62 62 0 0 1 0-124" stroke-width="6"/>
-  <circle cx="212" cy="100" r="5" fill="var(--accent)"/>
-  <circle cx="88" cy="100" r="5" fill="var(--warm)"/>
-  <g class="vdim" opacity=".8"><path d="M150 44v8M150 148v8M206 100h8M86 100h-8"/></g>
-  <circle cx="150" cy="100" r="22" fill="none" stroke="rgba(140,192,255,.25)"/>
-  <path class="vline" d="M150 112V90M141 99l9-9 9 9"/>
-  <text class="vtxt" x="150" y="32" text-anchor="middle">07:00</text>
-  <text class="vtxt" x="150" y="178" text-anchor="middle">22:00</text>
-  <text class="vtxt" x="246" y="104" text-anchor="middle" fill="var(--accent)">DÍA</text>
-  <text class="vtxt" x="54" y="104" text-anchor="middle" fill="var(--warm)">NOCHE</text>
+    <div class="cellx"><div class="vis"><svg viewBox="0 0 300 200" role="img" aria-label="Pantalla de bloqueo del celular de noche, con la luna de fondo">
+  <rect width="300" height="200" fill="#060a14"/>
+  <g filter="url(#fDrop)">
+    <rect x="103" y="16" width="94" height="182" rx="20" fill="url(#gBody)"/>
+    <clipPath id="cPhone"><rect x="107" y="20" width="86" height="174" rx="17"/></clipPath>
+    <g clip-path="url(#cPhone)">
+      <rect x="107" y="20" width="86" height="174" fill="url(#gNight)"/>
+      <circle cx="166" cy="145" r="40" fill="url(#gMoonGlow)"/>
+      <circle cx="166" cy="145" r="21" fill="url(#gMoon)"/>
+      <g fill="#b9ac93" opacity=".55"><circle cx="159" cy="139" r="4"/><circle cx="173" cy="151" r="2.6"/><circle cx="163" cy="155" r="1.9"/><circle cx="175" cy="138" r="1.6"/></g>
+      <g fill="#fff"><circle cx="120" cy="52" r="1" opacity=".8"/><circle cx="178" cy="46" r=".9" opacity=".7"/><circle cx="133" cy="78" r=".8" opacity=".55"/><circle cx="186" cy="88" r=".9" opacity=".6"/><circle cx="114" cy="104" r=".8" opacity=".5"/></g>
+      <path d="M107 158h86v36h-86z" fill="#05080f" opacity=".4"/>
+      <text x="150" y="86" text-anchor="middle" fill="#fff" font-family="'Sora',sans-serif" font-size="26" font-weight="200" letter-spacing="-.5">22:47</text>
+      <text x="150" y="98" text-anchor="middle" fill="#cdd9ee" font-family="'IBM Plex Mono',monospace" font-size="6" letter-spacing=".16em" opacity=".8">JUEVES 9</text>
+      <g opacity=".92"><rect x="123" y="168" width="54" height="15" rx="7.5" fill="rgba(255,180,92,.16)" stroke="rgba(255,180,92,.5)"/>
+      <text x="150" y="178" text-anchor="middle" fill="#ffb45c" font-family="'IBM Plex Mono',monospace" font-size="6.6" letter-spacing=".12em">PRIVADO</text></g>
+    </g>
+    <rect x="135" y="26" width="30" height="9" rx="4.5" fill="#05070c"/>
+    <rect x="133" y="186" width="34" height="3" rx="1.5" fill="#fff" opacity=".35"/>
+  </g>
 </svg></div><span class="tag">Opcional</span><h3>Horarios</h3><p>Programá que se ponga privado de noche o transparente al abrir, sin tocar nada.</p></div>
   </div>
 </div></section>
